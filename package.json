@@ -1,0 +1,30 @@
+{
+  "name": "com.dwm.it.plugin.deeplink",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "com.dwm.it.plugin.deeplink",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "description": "Deeplinks Plugin",
+  "keywords": [
+    "cordova",
+    "deeplink",
+    "deeplinks",
+    "mobile",
+    "hybrid",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "dependencies": {
+    "mkpath": ">=1.0.0",
+    "xml2js": ">=0.4",
+    "node-version-compare": ">=1.0.1",
+    "plist": ">=1.2.0"
+  },
+  "author": "Nicolas LHommet",
+  "license": "MIT"
+}

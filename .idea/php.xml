@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetector">
+    <phpmd_settings>
+      <MessDetectorConfiguration max_messages_per_file="20" timeout="10000" tool_path="C:\Users\crazy\AppData\Roaming\Composer\vendor\bin\phpmd.bat" />
+    </phpmd_settings>
+  </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration standards="MySource;PEAR;PSR1;PSR2;Squiz;Zend" tool_path="C:\Users\crazy\AppData\Roaming\Composer\vendor\bin\phpcs.bat" />
+    </phpcs_settings>
+  </component>
+</project>
