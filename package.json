@@ -8,6 +8,7 @@
       "android"
     ]
   },
+  "repository" : "https://gitlab.dwm-it.com/open-source/dwm.plugin.deeplink.git",
   "description": "Deeplinks Plugin",
   "keywords": [
     "cordova",
