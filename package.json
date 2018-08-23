@@ -1,6 +1,6 @@
 {
   "name": "com.dwm.it.plugin.deeplink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "cordova": {
     "id": "com.dwm.it.plugin.deeplink",
     "platforms": [
@@ -8,7 +8,7 @@
       "android"
     ]
   },
-  "repository" : "https://gitlab.dwm-it.com/open-source/dwm.plugin.deeplink.git",
+  "repository": "https://gitlab.dwm-it.com/open-source/dwm.plugin.deeplink.git",
   "description": "Deeplinks Plugin",
   "keywords": [
     "cordova",
