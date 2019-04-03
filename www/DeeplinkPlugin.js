@@ -8,11 +8,13 @@ var extend = function (out) {
     out = out || {};
 
     for (var i = 1; i < arguments.length; i++) {
-        if (!arguments[i])
+        if (!arguments[i]) {
             continue;
+        }
         for (var key in arguments[i]) {
-            if (arguments[i].hasOwnProperty(key))
+            if (arguments[i].hasOwnProperty(key)) {
                 out[key] = arguments[i][key];
+            }
         }
     }
     return out;
@@ -55,15 +57,11 @@ module.exports = {
         this.paths = paths;
 
         this.onDeepLink(function (data) {
-            if (data.fragment === '_=_') {
-                data.fragment = '';
-                data.url = data.url.replace('#_=_', '');
-            }
             console.log('On deep link', data);
             var realPath, pathData, matchedParams, args, finalArgs, didRoute;
 
             realPath = self._getRealPath(data);
-            args = self._queryToObject(data.url)
+            args = self._queryToObject(data.url);
 
             for (var targetPath in paths) {
                 pathData = paths[targetPath];
@@ -73,7 +71,7 @@ module.exports = {
                 if (matchedParams !== false) {
                     finalArgs = extend({}, matchedParams, args);
 
-                    if (typeof(success) === 'function') {
+                    if (typeof (success) === 'function') {
                         success({
                             $route: pathData,
                             $args: finalArgs,
@@ -86,7 +84,7 @@ module.exports = {
             }
 
             if (!didRoute) {
-                if (typeof(error) === 'function') {
+                if (typeof (error) === 'function') {
                     error({
                         $link: data
                     });
@@ -121,11 +119,11 @@ module.exports = {
                 }
             }, self.NAVIGATION_DELAY);
 
-            if (typeof(success) === 'function') {
+            if (typeof (success) === 'function') {
                 success(match);
             }
         }, function (nomatch) {
-            if (typeof(error) === 'function') {
+            if (typeof (error) === 'function') {
                 error(nomatch);
             }
         });
@@ -154,23 +152,26 @@ module.exports = {
             pp = parts[i];
             rp = routeParts[i];
 
-            if (rp[0] == ':') {
+            if (rp[0] === ':') {
                 // We have a route param, store it in our
                 // route params without the colon
                 routeParams[rp.slice(1)] = pp;
             } else if (pp !== rp) {
                 return false;
             }
-
         }
         return routeParams;
     },
 
     _queryToObject: function (q) {
-        if (!q) return {};
+        if (!q) {
+            return {};
+        }
 
         var qIndex = q.lastIndexOf('?');
-        if (qIndex < 0) return {};
+        if (qIndex < 0) {
+            return {};
+        }
 
         // Get everything after the ?
         q = q.slice(q.lastIndexOf('?') + 1);
@@ -185,7 +186,6 @@ module.exports = {
             pair = qArr[i].split('=');
             retObj[pair[0]] = pair[1];
         }
-        ;
 
         return retObj;
     },
@@ -208,7 +208,9 @@ module.exports = {
         }
 
         if (!data.path) {
-            if (data.host.charAt(0) != '/') data.host = '/' + data.host;
+            if (data.host.charAt(0) !== '/') {
+                data.host = '/' + data.host;
+            }
             return data.host;
         }
 
