@@ -57,6 +57,8 @@ module.exports = {
         this.paths = paths;
 
         this.onDeepLink(function (data) {
+            data.fragment = '';
+            data.url = data.url.replace(/(#.*)/g, '');
             console.log('On deep link', data);
             var realPath, pathData, matchedParams, args, finalArgs, didRoute;
 
